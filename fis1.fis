@@ -1,0 +1,49 @@
+[System]
+Name='fis1'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='input1'
+Range=[0 37]
+NumMFs=3
+MF1='Smooth':'trapmf',[-13.32 -1.48 7.401 18.55]
+MF2='Slightly-Rough':'trimf',[7.401 18.5 29.6]
+MF3='Rough':'trapmf',[18.54 29.6 38.47 50.31]
+
+[Input2]
+Name='input2'
+Range=[0 1.5]
+NumMFs=3
+MF1='Bright':'trapmf',[-0.54 -0.06 0.3 0.7522]
+MF2='Slightly-Dark':'trimf',[0.3 0.75 1.2]
+MF3='Dark':'trapmf',[0.7515 1.201 1.56 2.04]
+
+[Output1]
+Name='output1'
+Range=[0 1]
+NumMFs=5
+MF1='Very-Small':'trapmf',[-0.36 -0.04 0.0913 0.305555555555556]
+MF2='Slightly-Large':'trimf',[0.303 0.504 0.697089947089947]
+MF3='Very-Larg':'trapmf',[0.697089947089947 0.917 1.04 1.36]
+MF4='Slightly-Small':'trimf',[0.0992 0.30026455026455 0.499]
+MF5='Medium-Large':'trimf',[0.496 0.7 0.903439153439153]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 4 (1) : 1
+1 3, 1 (1) : 1
+2 1, 2 (1) : 1
+2 2, 5 (1) : 1
+2 3, 2 (1) : 1
+3 1, 5 (1) : 1
+3 2, 3 (1) : 1
+3 3, 5 (1) : 1

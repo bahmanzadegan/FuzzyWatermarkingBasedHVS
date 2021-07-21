@@ -1,0 +1,33 @@
+%% Correlation value according to the angles of rotation
+
+[filename, pathname] = uigetfile({'*.tif','FIF file'},'Please select Watemarked-image');
+QueryPath=[pathname,filename];
+Watemarked=imread(QueryPath);
+% imshow (QueryImage);
+disp('         Ok , Watermarked-image selected.');
+disp(' ')
+
+if ndims(Watemarked)==3
+    Watemarked=rgb2gray(Watemarked);
+end
+
+I = imrotate(Watemarked,1,'bicubic');
+I = imresize(I,[256 256]);
+WatermarkDetection(Watemarked_Rotate);
+
+I = imrotate(Watemarked,2,'bicubic');
+I = imresize(I,[256 256]);
+WatermarkDetection(Watemarked_Rotate);
+
+I = imrotate(Watemarked,3,'bicubic');
+I = imresize(I,[256 256]);
+WatermarkDetection(Watemarked_Rotate);
+
+I = imrotate(Watemarked,4,'bicubic');
+I = imresize(I,[256 256]);
+WatermarkDetection(Watemarked_Rotate);
+
+I = imrotate(Watemarked,5,'bicubic');
+I = imresize(I,[256 256]);
+WatermarkDetection(Watemarked_Rotate);
+
